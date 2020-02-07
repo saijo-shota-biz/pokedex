@@ -1,5 +1,5 @@
 module.exports = {
   transpileDependencies: ["vuetify"],
-  publicPath: "/pokedex/",
+  publicPath: "saijo-shota-biz/pokedex/",
   outputDir: "docs"
 };
