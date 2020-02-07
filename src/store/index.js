@@ -8,6 +8,9 @@ export default new Vuex.Store({
   state: {
     pokemons: pokedex
   },
+  getters: {
+    pokemons: state => state.pokemons
+  },
   mutations: {},
   actions: {},
   modules: {}

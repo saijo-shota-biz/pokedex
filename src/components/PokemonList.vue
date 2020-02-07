@@ -1,16 +1,24 @@
 <template>
   <div>
-    <Pokemon v-for="n in 10" :key="n"></Pokemon>
+    <PokemonIcon
+      v-for="pokemon in pokemons"
+      :key="pokemon.id"
+      :pokemon="pokemon"
+    ></PokemonIcon>
   </div>
 </template>
 
 <script>
-import Pokemon from "@/components/Pokemon.vue";
+import PokemonIcon from "@/components/PokemonIcon.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "pokemon-list",
   components: {
-    Pokemon
+    PokemonIcon
+  },
+  computed: {
+    ...mapGetters(["pokemons"])
   }
 };
 </script>
