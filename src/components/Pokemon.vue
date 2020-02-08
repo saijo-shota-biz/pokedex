@@ -2,16 +2,12 @@
   <v-dialog
     v-model="this.isOpen"
     persistent
-    max-width="30vw"
     v-if="this.isOpen"
+    max-width="30vw"
   >
     <v-card>
       <v-card-title style="font-family:'pokemon-font'">
-        <v-avatar
-          size="96"
-          class="pokemon-icon"
-          @click="openDialog(pokemon.id)"
-        >
+        <v-avatar size="96">
           <img
             :src="
               require('../assets/sprites/' +
@@ -22,14 +18,44 @@
         </v-avatar>
         {{ pokemon.name }}
       </v-card-title>
-      <v-img
-        :src="
-          require('../assets/thumbnails/' +
-            this.getImgName(this.pokemon.id) +
-            '.png')
-        "
-        max-width="30vw"
-      ></v-img>
+
+      <v-card-text>
+        <v-carousel hide-delimiter-background hide-delimiters height="400px">
+          <v-carousel-item>
+            <v-img
+              :src="
+                require('../assets/thumbnails/' +
+                  this.getImgName(this.pokemon.id) +
+                  '.png')
+              "
+            ></v-img>
+          </v-carousel-item>
+
+          <v-carousel-item>
+            <v-subheader light>タイプ</v-subheader>
+            <v-avatar size="72" v-for="t in pokemon.type" :key="t">
+              <img :src="require('../assets/types/' + t + '.png')" />
+            </v-avatar>
+            <v-divider light></v-divider>
+            <v-subheader light>種族値</v-subheader>
+            <div v-for="(val, name) in pokemon.base" :key="name">
+              <div max-height="10px;" style="font-size:10px">
+                {{ getJapanese(name) }}
+              </div>
+              <v-progress-linear
+                :value="(val / 255) * 100"
+                color="pink"
+                height="15"
+              >
+                <template v-slot="{ value }">
+                  <strong>{{ val }}</strong>
+                </template>
+              </v-progress-linear>
+            </div>
+          </v-carousel-item>
+        </v-carousel>
+      </v-card-text>
+
       <v-card-actions>
         <v-btn
           @click="openDialog(pokemon.id - 1)"
@@ -65,7 +91,18 @@ export default {
   },
   methods: {
     getImgName: id => ("000" + id).slice(-3),
-    ...mapActions(["openDialog", "closeDialog"])
+    ...mapActions(["openDialog", "closeDialog"]),
+    getJapanese: name => {
+      const map = {
+        HP: "HP",
+        Attack: "こうげき",
+        Defense: "ぼうぎょ",
+        SPAttack: "とくこう",
+        SPDefense: "とくぼう",
+        Speed: "すばやさ"
+      };
+      return map[name];
+    }
   }
 };
 </script>
