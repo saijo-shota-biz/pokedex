@@ -1,6 +1,6 @@
 <template>
   <div class="pokemon-icon-container">
-    <v-avatar size="96" class="pokemon-icon">
+    <v-avatar size="96" class="pokemon-icon" @click="openDialog(pokemon.id)">
       <img
         :src="
           require('../assets/sprites/' +
@@ -15,6 +15,8 @@
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "pokemon-icon",
 
@@ -23,7 +25,8 @@ export default {
   },
 
   methods: {
-    getImgName: id => ("000" + id).slice(-3) + "MS"
+    getImgName: id => ("000" + id).slice(-3) + "MS",
+    ...mapActions(["openDialog"])
   }
 };
 </script>
