@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f474def9591831a4597",
+    "revision": "629dec342778235ec260",
     "url": "/saijo-shota-biz/pokedex/css/app.46b7e7dc.css"
   },
   {
-    "revision": "6cddefeebd384b9a3a63",
+    "revision": "4de4ab0fd81376b27323",
     "url": "/saijo-shota-biz/pokedex/css/chunk-vendors.56fd4bff.css"
   },
   {
@@ -3260,16 +3260,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/saijo-shota-biz/pokedex/img/809.f98a3053.png"
   },
   {
-    "revision": "018dfb3d1baf9bbc5db437b0b4be3082",
+    "revision": "3c97f66e5db4f677a0860c0a7c289d79",
     "url": "/saijo-shota-biz/pokedex/index.html"
   },
   {
-    "revision": "4f474def9591831a4597",
-    "url": "/saijo-shota-biz/pokedex/js/app.45b06091.js"
+    "revision": "629dec342778235ec260",
+    "url": "/saijo-shota-biz/pokedex/js/app.fc14f905.js"
   },
   {
-    "revision": "6cddefeebd384b9a3a63",
-    "url": "/saijo-shota-biz/pokedex/js/chunk-vendors.c9b59581.js"
+    "revision": "4de4ab0fd81376b27323",
+    "url": "/saijo-shota-biz/pokedex/js/chunk-vendors.175e4652.js"
   },
   {
     "revision": "8f9cd7bde59e82e8dc12107b6372eaff",
