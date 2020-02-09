@@ -57,21 +57,7 @@
       </v-card-text>
 
       <v-card-actions>
-        <v-btn
-          @click="openDialog(pokemon.id - 1)"
-          :disabled="isFirst"
-          width="135px"
-          color="teal"
-          >Prev</v-btn
-        >
-        <v-btn @click="closeDialog()" width="100px" color="red">Close</v-btn>
-        <v-btn
-          @click="openDialog(pokemon.id + 1)"
-          :disabled="isLast"
-          width="135px"
-          color="teal"
-          >Next</v-btn
-        >
+        <v-btn @click="closeDialog()" color="red" block>Close</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
