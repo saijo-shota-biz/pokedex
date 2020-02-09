@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app absolute color="red" dark clipped-left>
+    <v-app-bar app color="red" dark clipped-left>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>ポケモン図鑑</v-toolbar-title>
     </v-app-bar>
