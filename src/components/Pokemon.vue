@@ -10,9 +10,9 @@
         <v-avatar size="96">
           <img
             :src="
-              require('../assets/sprites/' +
+              'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/sprites/' +
                 this.getImgName(this.pokemon.id) +
-                'MS.png')
+                'MS.png'
             "
           />
         </v-avatar>
@@ -24,9 +24,9 @@
           <v-carousel-item>
             <v-img
               :src="
-                require('../assets/thumbnails/' +
+                'https://raw.githubusercontent.com/fanzeyi/pokemon.json/master/images/' +
                   this.getImgName(this.pokemon.id) +
-                  '.png')
+                  '.png'
               "
             ></v-img>
           </v-carousel-item>
@@ -73,7 +73,7 @@ export default {
   data: () => ({}),
 
   computed: {
-    ...mapGetters(["isOpen", "pokemon", "isFirst", "isLast"])
+    ...mapGetters(["isOpen", "pokemon"])
   },
   methods: {
     getImgName: id => ("000" + id).slice(-3),

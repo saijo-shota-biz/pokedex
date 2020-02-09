@@ -3,11 +3,10 @@
     <v-avatar size="96" class="pokemon-icon" @click="openDialog(pokemon.id)">
       <img
         :src="
-          require('../assets/sprites/' +
-            this.getImgName(this.pokemon.id) +
-            '.png')
+          'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' +
+            this.pokemon.id +
+            '.png'
         "
-        :alt="this.pokemon.name"
       />
     </v-avatar>
     <div class="pokemon-name">{{ this.pokemon.name }}</div>
@@ -25,7 +24,6 @@ export default {
   },
 
   methods: {
-    getImgName: id => ("000" + id).slice(-3) + "MS",
     ...mapActions(["openDialog"])
   }
 };
