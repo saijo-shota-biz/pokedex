@@ -10,12 +10,7 @@
         @input="onChange"
       ></v-text-field>
 
-      <v-checkbox
-        label="全選択/解除"
-        :value="check"
-        @click="changeValue(check)"
-        hide-details
-      ></v-checkbox>
+      <v-checkbox label="全選択/解除" v-model="check" hide-details></v-checkbox>
 
       <v-btn-toggle v-model="types1" multiple @change="onChange">
         <v-btn
@@ -163,6 +158,26 @@ export default {
     spd: [1, 255]
   }),
 
+  watch: {
+    check: function(newVal) {
+      if (newVal) {
+        this.types1 = ["Fire", "Water", "Grass", "Electric"];
+        this.types2 = ["Flying", "Fighting", "Psychic", "Bug"];
+        this.types3 = ["Ice", "Dragon", "Rock", "Ground"];
+        this.types4 = ["Normal", "Poison", "Ghost", "Dark"];
+        this.types5 = ["Steel", "Fairy"];
+      } else {
+        this.types1 = [];
+        this.types2 = [];
+        this.types3 = [];
+        this.types4 = [];
+        this.types5 = [];
+      }
+
+      this.onChange();
+    }
+  },
+
   methods: {
     ...mapActions(["setConditions"]),
     onChange: function() {
@@ -200,25 +215,6 @@ export default {
       this.spd = [1, 255];
 
       this.setConditions(null);
-    },
-
-    changeValue: function(val) {
-      this.check = !val;
-      if (this.check) {
-        this.types1 = ["Fire", "Water", "Grass", "Electric"];
-        this.types2 = ["Flying", "Fighting", "Psychic", "Bug"];
-        this.types3 = ["Ice", "Dragon", "Rock", "Ground"];
-        this.types4 = ["Normal", "Poison", "Ghost", "Dark"];
-        this.types5 = ["Steel", "Fairy"];
-      } else {
-        this.types1 = [];
-        this.types2 = [];
-        this.types3 = [];
-        this.types4 = [];
-        this.types5 = [];
-      }
-
-      this.onChange();
     }
   }
 };
