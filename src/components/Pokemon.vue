@@ -47,7 +47,7 @@
                 color="pink"
                 height="15"
               >
-                <template v-slot="{ value }">
+                <template>
                   <strong>{{ val }}</strong>
                 </template>
               </v-progress-linear>
