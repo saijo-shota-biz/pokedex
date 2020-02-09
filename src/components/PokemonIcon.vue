@@ -34,6 +34,7 @@ export default {
 <style scoped>
 .pokemon-icon:hover {
   background-color: skyblue;
+  cursor: pointer;
 }
 .pokemon-icon-container {
   max-width: 96px;

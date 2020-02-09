@@ -3,7 +3,7 @@
     v-model="this.isOpen"
     persistent
     v-if="this.isOpen"
-    max-width="30vw"
+    max-width="400px"
   >
     <v-card>
       <v-card-title style="font-family:'pokemon-font'">
@@ -60,15 +60,15 @@
         <v-btn
           @click="openDialog(pokemon.id - 1)"
           :disabled="isFirst"
-          width="32%"
+          width="135px"
           color="teal"
           >Prev</v-btn
         >
-        <v-btn @click="closeDialog()" width="30%" color="red">Close</v-btn>
+        <v-btn @click="closeDialog()" width="100px" color="red">Close</v-btn>
         <v-btn
           @click="openDialog(pokemon.id + 1)"
           :disabled="isLast"
-          width="32%"
+          width="135px"
           color="teal"
           >Next</v-btn
         >
